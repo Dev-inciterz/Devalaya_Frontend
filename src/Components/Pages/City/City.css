@@ -1,0 +1,19 @@
+.citybased_temple_card{
+
+    width: 20vw;
+    margin: 20px;
+}
+
+.citybased_temple_card img{
+
+    width: 100%;
+    
+    border-radius: 5px;
+}
+
+
+.citybased_temples_all:hover{
+
+
+    cursor: pointer;
+}

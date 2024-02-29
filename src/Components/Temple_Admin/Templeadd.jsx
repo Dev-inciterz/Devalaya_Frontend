@@ -18,6 +18,7 @@ const TempleAdd = () => {
     category: "",
     tags: "",
     food: "",
+    city:""
   });
 
   const [images, setImages] = useState([]);
@@ -55,6 +56,9 @@ const TempleAdd = () => {
       formDataToSend.append("socialacitivities", formData.socialacitivities);
       formDataToSend.append("tags", formData.tags);
       formDataToSend.append("food", formData.food);
+
+      formDataToSend.append("city", formData.city);
+
       //   formDataToSend.append('temple_imgs', images);
 
       images.forEach((image) => formDataToSend.append("temple_imgs", image));
@@ -186,6 +190,18 @@ const TempleAdd = () => {
             type="text"
             name="category"
             value={formData.category}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+
+        <div className="fromdatatempleinpts">
+          <label>City:</label>
+          <input
+            type="text"
+            name="city"
+            value={formData.city}
             onChange={handleChange}
             required
           />
