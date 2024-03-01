@@ -1,0 +1,41 @@
+.temple_details{
+
+    display: flex;
+    /* border: 2px solid red; */
+    justify-content: space-around;
+}
+
+
+.temple_details_left{
+
+    width: 75vw;
+    /* margin: 20px 50px; */
+    /* margin: 20px auto; */
+}
+
+.temple_details_right{
+
+    margin: 50px 00;
+}
+
+.temple_details_right > *{
+
+    margin:20px 00;
+}
+
+.temple_name{
+
+    margin: 20px 00 00 00;
+}
+
+.temple_details_brief{
+
+
+    margin: 20px 00;
+}
+
+.temple_about_heading{
+
+    font-weight: 700;
+    margin: 0;
+}

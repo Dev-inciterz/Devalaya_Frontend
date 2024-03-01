@@ -1,73 +1,21 @@
 import React from "react";
 
+import { Fade } from 'react-slideshow-image';
+import 'react-slideshow-image/dist/styles.css'
+
 const Citybanner = ({ cityimages, title }) => {
   return (
     <div>
-      <div id="carouselExampleIndicators" class="carousel slide">
-        <div class="carousel-indicators">
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="0"
-            class="active"
-            aria-current="true"
-            aria-label="Slide 1"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="2"
-            aria-label="Slide 3"
-          ></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img
-              src={`${process.env.REACT_APP_BACKEND_URL}/${cityimages[0]}`}
-              class="d-block w-100 img-fluid"
-              alt={`${title} bnnr`}
-            />
+      <div className="slide-container">
+      <Fade>
+        {cityimages.map((image, index) => (
+          <div key={index}>
+            <img style={{ width: '100%', height:"60vh" }} src={index < cityimages.length ? `${process.env.REACT_APP_BACKEND_URL}/${cityimages[index]}` : image} />
+            {/* <h2>{title}</h2> */}
           </div>
-          <div class="carousel-item">
-            <img
-              src={`${process.env.REACT_APP_BACKEND_URL}/${cityimages[1]}`}
-              class="d-block w-100 img-fluid"
-              alt={`${title} bnnr`}
-            />
-          </div>
-          <div class="carousel-item">
-            <img
-              src={`${process.env.REACT_APP_BACKEND_URL}/${cityimages[2]}`}
-              class="d-block w-100 img-fluid"
-              alt={`${title} bnnr`}
-            />
-          </div>
-        </div>
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
+        ))}
+      </Fade>
+    </div>
     </div>
   );
 };

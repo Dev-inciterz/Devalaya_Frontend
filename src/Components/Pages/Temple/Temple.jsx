@@ -3,6 +3,18 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Loader from "../../Loader/Loader";
 import Templebanner from "./Templebanner";
+import "./Temple.css";
+
+import CustomTemplateImage from "../../Assets/Cstom_Teple_one.jpg";
+import CSTMIMG from "../../Assets/Custom_Temple_Three.jpg";
+import cstmimgthree from "../../Assets/Custom_Temple_Two.jpg";
+
+import Box from "@mui/material/Box";
+import Tab from "@mui/material/Tab";
+import TabContext from "@mui/lab/TabContext";
+import TabList from "@mui/lab/TabList";
+import TabPanel from "@mui/lab/TabPanel";
+import Templecards from "./Templecards";
 
 const Temple = () => {
   const { id } = useParams();
@@ -10,6 +22,16 @@ const Temple = () => {
   const [temple, setTemple] = useState([]);
 
   const [loading, setLoading] = useState(true);
+  const [value, setValue] = useState("one");
+
+  const DefaultImages = [
+    CustomTemplateImage,
+    CSTMIMG,
+    cstmimgthree,
+    CustomTemplateImage,
+    CSTMIMG,
+    cstmimgthree,
+  ];
 
   const fetchTempleData = async () => {
     console.warn("i ahev been called");
@@ -23,6 +45,10 @@ const Temple = () => {
     }
   };
 
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
   useEffect(() => {
     fetchTempleData().then((data) => {
       if (data) {
@@ -31,6 +57,8 @@ const Temple = () => {
       setTemple(data);
     });
   }, [id]);
+
+  console.log("eicbvkewjvbwkjlcbnkw vcjhb noelb rk", temple.category);
 
   return (
     <div>
@@ -41,81 +69,55 @@ const Temple = () => {
           <Templebanner templeimages={temple.pictures} title={temple.name} />
 
           <div className="temple_details">
+            <div className="temple_details_left">
+              <h2 className="temple_name">
+                {temple.city.title} , {temple.name}
+              </h2>
 
-          <h2 className="temple_name">{temple.city.name}</h2>
-
-            <h2 className="temple_name">{temple.name}</h2>
-
-
-
-            <div className="temple_details_brief">
-              <div className="temple_brief_about">
-                <p className="temple_about_heading">Description</p>
-                <p className="temple_about_para">{temple.description}</p>
-              </div>
-
-              <div className="temple_history">
-              <p className="temple_about_heading">History</p>
-              <p className="temple_about_para">{temple.history}</p>
-              </div>
-
-
-              <div className="temple_history">
-              <p className="temple_about_heading">Timings</p>
-              <p className="temple_about_para">{temple.timings}</p>
-              </div>
-
-              <div className="temple_history">
-              <p className="temple_about_heading">Best Time To Visit</p>
-              <p className="temple_about_para">{temple.besttimeofvisit}</p>
-              </div>
-
-
-              <div className="temple_history">
-              <p className="temple_about_heading">Small Description</p>
-              <p className="temple_about_para">{temple.smalldescription}</p>
-              </div>
-
-
-              <div className="temple_history">
-              <p className="temple_about_heading">Rules and Regulations</p>
-              <p className="temple_about_para">{temple.rulesandregulations}</p>
-              </div>
-
-
-              <div className="temple_history">
-              <p className="temple_about_heading">Contact</p>
-              <p className="temple_about_para">{temple.contact}</p>
-              </div>
-
-
-              <div className="temple_history">
-              <p className="temple_about_heading">Social Acitivities</p>
-              <p className="temple_about_para">{temple.socialacitivities}</p>
-              </div>
-
-
-
-              <div className="temple_history">
-              <p className="temple_about_heading">Category</p>
-              <p className="temple_about_para">{temple.category.title}</p>
-              </div>
-
-
-
-              <div className="temple_history">
-              <p className="temple_about_heading">Tags</p>
-              <p className="temple_about_para">{temple.tags}</p>
-              </div>
-
-
-              <div className="temple_history">
-              <p className="temple_about_heading">Foods</p>
-              <p className="temple_about_para">{temple.food}</p>
+              <div className="temple_details_brief">
+                <Box sx={{ width: "100%", typography: "body1" }}>
+                  <TabContext value={value}>
+                    <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+                      <TabList
+                        onChange={handleChange}
+                        variant="scrollable"
+                        scrollButtons="auto"
+                        aria-label="lab API tabs example"
+                      >
+                        <Tab label="Description" value="1" />
+                        <Tab label="History" value="2" />
+                        <Tab label="Timings" value="3" />
+                        <Tab label="Best Time To Visit" value="4" />
+                        <Tab label="Small Description" value="5" />
+                        <Tab label="Rules and Regulations" value="6" />
+                        <Tab label="Contact" value="7" />
+                        <Tab label="Social Acitivities" value="8" />
+                        <Tab label="Category" value="9" />
+                        <Tab label="Tags" value="10" />
+                        <Tab label="Foods" value="11" />
+                      </TabList>
+                    </Box>
+                    <TabPanel value="1">{temple.description}</TabPanel>
+                    <TabPanel value="2">{temple.history}</TabPanel>
+                    <TabPanel value="3">{temple.timings}</TabPanel>
+                    <TabPanel value="4">{temple.besttimeofvisit}</TabPanel>
+                    <TabPanel value="5">{temple.smalldescription}</TabPanel>
+                    <TabPanel value="6">{temple.rulesandregulations}</TabPanel>
+                    <TabPanel value="7">{temple.contact}</TabPanel>
+                    <TabPanel value="8">{temple.socialacitivities}</TabPanel>
+                    <TabPanel value="9">{temple.category.name}</TabPanel>
+                    <TabPanel value="10">{temple.tags}</TabPanel>
+                    <TabPanel value="11">{temple.food}</TabPanel>
+                  </TabContext>
+                </Box>
               </div>
             </div>
 
-            
+            <div className="temple_details_right">
+              {DefaultImages.map((image) => (
+                <Templecards image={image} />
+              ))}
+            </div>
           </div>
         </div>
       )}
