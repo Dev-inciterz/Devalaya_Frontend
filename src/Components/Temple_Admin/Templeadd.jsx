@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./Templeadd.css";
 
 const TempleAdd = () => {
   const BackendUrl = process.env.REACT_APP_BACKEND_URL;
 
   console.log("BackendUrl", BackendUrl);
+
   const [formData, setFormData] = useState({
     name: "",
     description: "",
@@ -12,23 +14,37 @@ const TempleAdd = () => {
     besttimeofvisit: "",
     rulesandregulations: "",
     smalldescription: "",
-    contact: "",
+    contactaddresslineone: "",
+    contactaddresslinetwo: "",
+    contactphonenumers: [], // Initialize as an empty array
+    contactemails: [], // Initialize as an empty array
     history: "",
     socialacitivities: "",
     category: "",
     tags: "",
     food: "",
-    city:""
+    city: "",
   });
-
   const [images, setImages] = useState([]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
+    if (
+      name === "contactaddresslineone" ||
+      name === "contactaddresslinetwo" ||
+      name === "contactphonenumers" ||
+      name === "contactemails"
+    ) {
+      setFormData((prevState) => ({
+        ...prevState,
+        [name]: value,
+      }));
+    } else {
+      setFormData((prevState) => ({
+        ...prevState,
+        [name]: value,
+      }));
+    }
   };
 
   const handleImageChange = (e) => {
@@ -36,6 +52,7 @@ const TempleAdd = () => {
     const imageFiles = Array.from(e.target.files);
     setImages(imageFiles);
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -51,22 +68,25 @@ const TempleAdd = () => {
         formData.rulesandregulations
       );
       formDataToSend.append("smalldescription", formData.smalldescription);
-      formDataToSend.append("contact", formData.contact);
+      // formDataToSend.append("contact", contactString);
+
+      formDataToSend.append("addresslineone", formData.contactaddresslineone);
+      formDataToSend.append("addresslinetwo", formData.contactaddresslinetwo);
+      formDataToSend.append("phonenumbers", formData.contactphonenumers);
+      formDataToSend.append("emails", formData.contactemails);
+
       formDataToSend.append("history", formData.history);
       formDataToSend.append("socialacitivities", formData.socialacitivities);
       formDataToSend.append("tags", formData.tags);
       formDataToSend.append("food", formData.food);
-
       formDataToSend.append("city", formData.city);
-
-      //   formDataToSend.append('temple_imgs', images);
 
       images.forEach((image) => formDataToSend.append("temple_imgs", image));
 
       const WebUrl = `${BackendUrl}/temple/add`;
       const token = process.env.REACT_APP_ADMIN_TOKEN;
 
-      console.log("sdrtfghjkl;", formDataToSend);
+      console.log("FormDataToSend:", formDataToSend);
       const response = await axios.post(WebUrl, formDataToSend, {
         headers: {
           "Content-Type": "multipart/form-data",
@@ -82,7 +102,7 @@ const TempleAdd = () => {
   };
 
   return (
-    <div>
+    <div className="temple_add_whole">
       <h2>Add Temple</h2>
       <form onSubmit={handleSubmit}>
         <div className="fromdatatempleinpts">
@@ -97,7 +117,7 @@ const TempleAdd = () => {
         </div>
 
         <div className="fromdatatempleinpts">
-          <label>Description:</label>
+          <label>Information:</label>
           <input
             type="text"
             name="description"
@@ -141,22 +161,43 @@ const TempleAdd = () => {
         </div>
 
         <div className="fromdatatempleinpts">
-          <label>Small Description:</label>
+          <label>Contact Address Line One:</label>
           <input
             type="text"
-            name="smalldescription"
-            value={formData.smalldescription}
+            name="contactaddresslineone"
+            value={formData.contactaddresslineone}
             onChange={handleChange}
             required
           />
         </div>
 
         <div className="fromdatatempleinpts">
-          <label>Contact:</label>
+          <label>Contact Address Line Two:</label>
           <input
             type="text"
-            name="contact"
-            value={formData.contact}
+            name="contactaddresslinetwo"
+            value={formData.contactaddresslinetwo}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div className="fromdatatempleinpts">
+          <label>Contact Phone Numbers (separated by commas):</label>
+          <input
+            type="text"
+            name="contactphonenumers"
+            value={formData.contactphonenumers}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div className="fromdatatempleinpts">
+          <label>Contact Emails (separated by commas):</label>
+          <input
+            type="text"
+            name="contactemails"
+            value={formData.contactemails}
             onChange={handleChange}
             required
           />
@@ -195,7 +236,6 @@ const TempleAdd = () => {
           />
         </div>
 
-
         <div className="fromdatatempleinpts">
           <label>City:</label>
           <input
@@ -229,16 +269,16 @@ const TempleAdd = () => {
           />
         </div>
 
-        {/* Add other input fields similarly */}
-
-        <label>Upload Pictures:</label>
-        <input
-          type="file"
-          name="temple_imgs"
-          onChange={handleImageChange}
-          accept="image/*"
-          multiple
-        />
+        <div className="fromdatatempleinpts">
+          <label>Upload Pictures:</label>
+          <input
+            type="file"
+            name="temple_imgs"
+            onChange={handleImageChange}
+            accept="image/*"
+            multiple
+          />
+        </div>
 
         <button type="submit">Submit</button>
       </form>

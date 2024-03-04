@@ -1,14 +1,22 @@
+
+
+
 .temple_details{
 
     display: flex;
     /* border: 2px solid red; */
     justify-content: space-around;
+
+
+    width: 90vw;
+    margin: 00 auto;
 }
 
 
 .temple_details_left{
 
     width: 75vw;
+    padding: 00 20px;
     /* margin: 20px 50px; */
     /* margin: 20px auto; */
 }
@@ -38,4 +46,43 @@
 
     font-weight: 700;
     margin: 0;
+}
+
+
+.temple_tags{
+
+
+    background-color: antiquewhite;
+    margin: 2px;
+    padding: 5px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+
+.templeafflt_cards{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+.affliate_card_heading{
+
+    font-weight: 700;
+    padding:  00 20px;
+}
+
+
+.temple_affltlnks_hr{
+
+
+    margin: 50px 00;
+}
+
+
+.temple_contact p{
+
+    margin: 00 00 !important;
 }

@@ -1,4 +1,5 @@
 import { Route, BrowserRouter, Routes } from "react-router-dom";
+import Templehome from "./Components/Admin/Templehome";
 import Home from "./Components/Home/Home";
 import City from "./Components/Pages/City/City";
 import Temple from "./Components/Pages/Temple/Temple";
@@ -17,6 +18,9 @@ function App() {
           <Route path="/city/:id" element={<City />} />
 
           <Route path="/temple/:id" element={<Temple />} />
+
+          <Route path="/admin/temples" element={<Templehome />} />
+
 
 
 

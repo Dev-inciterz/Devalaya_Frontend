@@ -20,7 +20,7 @@ const Templebanner = ({ templeimages = [], title = "Default Title" }) => {
       <Fade>
         {defaultImages.map((image, index) => (
           <div key={index}>
-            <img style={{ width: '100%', height:"60vh" }} src={index < templeimages.length ? `${process.env.REACT_APP_BACKEND_URL}/${templeimages[index]}` : image} />
+            <img style={{ width: '100%', height:"75vh" }} alt="templebnnr" src={index < templeimages.length ? `${process.env.REACT_APP_BACKEND_URL}/${templeimages[index]}` : image} />
             {/* <h2>{title}</h2> */}
           </div>
         ))}

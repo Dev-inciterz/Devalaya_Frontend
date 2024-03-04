@@ -18,7 +18,6 @@ const City = () => {
 
 
   const SendToTemplePage = (id) => {
-    console.log("this temple id is going to send", id);
     navigate(`/temple/${id}`);
   };
 
@@ -58,10 +57,9 @@ const City = () => {
     });
 
     FetchTemplesByCity().then((data) => {
-      console.log("cutytytytyt temple dtatatata", data);
-
       setCitytemples(data);
     });
+    // eslint-disable-next-line 
   }, [id]);
 
 //   console.log(citydata);
