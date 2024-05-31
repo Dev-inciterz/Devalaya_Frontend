@@ -1,0 +1,34 @@
+.staycard_item img {
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.staycard_item_card {
+  width: 260px; /* Adjust width as needed */
+  height: 260px; /* Adjust height as needed */
+  display: flex !important;
+  flex-direction: column;
+}
+
+.staycardtitle {
+  font-weight: 700;
+  padding: 5px;
+  margin: 10px 0;
+}
+
+.staycards {
+  padding: 10px;
+}
+
+.staycardpage .slick-next:before,
+.staycardpage .slick-prev:before {
+  color: #f86332;
+}
+
+.restcards_heading {
+  font-weight: 700;
+}

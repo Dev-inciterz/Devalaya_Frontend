@@ -2,8 +2,11 @@ import { Route, BrowserRouter, Routes } from "react-router-dom";
 import Templehome from "./Components/Admin/Templehome";
 import Home from "./Components/Home/Home";
 import City from "./Components/Pages/City/City";
+import Locationtracker from "./Components/Pages/LocationTracker/Locationtracker";
 import Temple from "./Components/Pages/Temple/Temple";
+import Newtestcomp from "./Components/Temple_Admin/Newtestcomp";
 import TempleAdd from "./Components/Temple_Admin/Templeadd";
+import Templeupdate from "./Components/Temple_Admin/Templeupdate";
 
 function App() {
   console.log("Name", process.env.REACT_APP_NAME);
@@ -19,10 +22,13 @@ function App() {
 
           <Route path="/temple/:id" element={<Temple />} />
 
+          <Route path="/admin-temple/update/:id" element={<Templeupdate />} />
+
           <Route path="/admin/temples" element={<Templehome />} />
 
+          <Route path="/test" element={<Newtestcomp />} />
 
-
+          <Route path="/mapping" element={<Locationtracker />} />
 
         </Routes>
       </BrowserRouter>

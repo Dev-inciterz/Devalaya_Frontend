@@ -1,0 +1,42 @@
+.rstcard_item img {
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rstcard_item_card {
+  width: 260px; /* Adjust width as needed */
+  height: 260px; /* Adjust height as needed */
+  display: flex !important;
+  flex-direction: column;
+}
+
+.restcardtitle {
+  font-weight: 700;
+  padding: 5px;
+  margin: 10px 0;
+}
+
+.restcards {
+  padding: 10px 00 00 10px;
+}
+
+.restcardspage .slick-next:before,
+.restcardspage .slick-prev:before {
+  color: #f86332;
+  /* font-size: 16px; */
+}
+
+.slick-next{
+
+ right: -15px !important;
+
+}
+
+.restcards_heading {
+  font-weight: 700;
+  font-size: 26px;
+}

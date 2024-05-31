@@ -81,7 +81,7 @@ const Templedatasheet = () => {
             </Link>
 
             <Link
-              to={`/admin-portfolio/edit/${row.original._id}`}
+              to={`/admin-temple/update/${row.original._id}`}
               style={{ textDecoration: "none" }}
               state={row.original}
             >
@@ -123,7 +123,18 @@ const Templedatasheet = () => {
 
   return (
     <div className="temple_datatable">
+
+        <div className="temple_adminactionrow">
+            <Link to='/addtemple' className="templeadd_actn">Add Temple</Link>
+
+        </div>
+
+        <div className="temple_listing">
+
+
+
       {temples.length && <MaterialReactTable table={table} />}
+        </div>
     </div>
   );
 };

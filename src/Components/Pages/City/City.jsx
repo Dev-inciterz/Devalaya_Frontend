@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Loader from "../../Loader/Loader";
 import Citybanner from "./Citybanner";
 import './City.css'
+import Navbar from "../../Nav/Navbar";
 
 const City = () => {
 
@@ -72,6 +73,7 @@ const City = () => {
         <Loader />
       ) : (
         <div className="citypagemain">
+          <Navbar />
           <div className="citytopbanners">
             <Citybanner cityimages={citydata.pictures} title={citydata.title} />
           </div>

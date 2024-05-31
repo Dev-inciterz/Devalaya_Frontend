@@ -1,4 +1,5 @@
 import React from "react";
+
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -6,7 +7,8 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-const Affiliatecards = ({ howtoreach }) => {
+const Nearbytemples = ({ temple }) => {
+
   const styles = {
     card: {
       position: 'relative',
@@ -35,37 +37,37 @@ const Affiliatecards = ({ howtoreach }) => {
       alignItems: 'center',
       color: 'white',
       fontWeight: 700,
-      fontSize: '48px',
+      fontSize: '28px',
       textAlign: 'center',
+      zIndex: 1, // Ensure overlay is above the image
     },
   };
 
   return (
     <div className="affiliate_card">
-      <Card style={styles.card} sx={{  boxShadow: 3}}>
+      <Card style={styles.card}>
         <div style={styles.mediaContainer}>
           <CardMedia
+            image={`${process.env.REACT_APP_BACKEND_URL}/${temple.pictures[0]}`}
             component="img"
-            image={howtoreach.images}
-            title={howtoreach.title}
+            title={temple.name}
             style={styles.media}
           />
           <div style={styles.overlay}>
-            {howtoreach.title}
+            {temple.name}
           </div>
         </div>
         <CardContent>
           <Typography variant="body2" color="text.secondary">
-            {howtoreach.desc}
+            {temple.description.split(' ').slice(0, 15).join(' ')}
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Book</Button>
-          <Button size="small">Get more details</Button>
+          <Button size="small">Visit</Button>
         </CardActions>
       </Card>
     </div>
   );
 };
 
-export default Affiliatecards;
+export default Nearbytemples;

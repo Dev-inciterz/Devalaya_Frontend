@@ -1,88 +1,88 @@
+.temple_details {
+  display: flex;
+  /* border: 2px solid red; */
+  justify-content: space-around;
 
+  width: 90vw;
+  margin: 00 auto;
+}
 
+.heading_main{
 
-.temple_details{
+  font-weight: 700;
+  font-size: 36px;
+}
 
-    display: flex;
-    /* border: 2px solid red; */
-    justify-content: space-around;
+.temple_details_mid_section, .temple_contact{
+margin: 10px 00 00 00;
+}
 
+.temple_details_left {
+  width: 70vw;
+  padding: 00 20px;
 
-    width: 90vw;
-    margin: 00 auto;
+}
+
+.temple_details_right {
+  margin: 50px 00;
+}
+
+.temple_details_right > * {
+  margin: 20px 00;
+}
+
+.temple_name {
+  margin: 20px 00 00 00;
+}
+
+.temple_details_brief {
+  margin: 20px 00 00 00;
+  border: 1px solid red;
+}
+
+.temple_details_brief  .temple_capsule_tab{
+
+  border: 10px solid green;
+}
+
+.temple_about_heading {
+  font-weight: 700;
+  margin: 0;
+}
+
+.temple_tags {
+  background-color: antiquewhite;
+  margin: 2px;
+  padding: 5px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.templeafflt_cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.affliate_card_heading {
+  font-weight: 700;
+  padding: 00 20px;
+  margin: 0;
+  font-size: 28px;
+}
+
+.temple_affltlnks_hr {
+  margin: 30px 00;
+}
+
+.temple_contact p {
+  margin: 00 00 !important;
 }
 
 
-.temple_details_left{
-
-    width: 75vw;
-    padding: 00 20px;
-    /* margin: 20px 50px; */
-    /* margin: 20px auto; */
-}
-
-.temple_details_right{
-
-    margin: 50px 00;
-}
-
-.temple_details_right > *{
-
-    margin:20px 00;
-}
-
-.temple_name{
-
-    margin: 20px 00 00 00;
-}
-
-.temple_details_brief{
 
 
-    margin: 20px 00;
-}
+.css-13xfq8m-MuiTabPanel-root{
 
-.temple_about_heading{
-
-    font-weight: 700;
-    margin: 0;
-}
-
-
-.temple_tags{
-
-
-    background-color: antiquewhite;
-    margin: 2px;
-    padding: 5px;
-    border-radius: 5px;
-    display: inline-block;
-}
-
-
-.templeafflt_cards{
-
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-
-.affliate_card_heading{
-
-    font-weight: 700;
-    padding:  00 20px;
-}
-
-
-.temple_affltlnks_hr{
-
-
-    margin: 50px 00;
-}
-
-
-.temple_contact p{
-
-    margin: 00 00 !important;
+  padding: 24px 24px 00 24px !important;
 }

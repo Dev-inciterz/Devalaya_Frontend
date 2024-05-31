@@ -1,0 +1,39 @@
+
+
+
+.how_to_reach_items{
+
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+
+/* .how_to_reach_items > * {
+    flex-grow: 1;
+    border: 1px solid red;
+} */
+
+.how_to_reach_item{
+
+    /* border: 1px solid red; */
+    width: 30%;
+
+}
+
+
+.how_to_reach_item a{
+
+    text-decoration: none;
+    background-color: #f28a1f;
+    padding: 10px 15px;
+    color: #fff;
+    border-radius: 5px;
+}
+
+
+.how_to_reach_item a:hover{
+
+
+    color: #fff;
+}
