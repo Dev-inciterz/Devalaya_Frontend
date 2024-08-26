@@ -5,18 +5,9 @@ import Jyotirlingas from "./Jyotirlingas";
 import ChaarDhams from "./ChaarDhams";
 import CulturalInsights from "./CulturalInsights";
 import CustomCarousel from "../Slider/CustomCarousel";
-// import Cityhome from "../Pages/City/Cityhome";
+
 
 const Home = () => {
-  // const [alltemples, setAlltemples] = useState([]);
-
-  // const fetchAllTemples = async () => {
-  //   const webURL = `${process.env.REACT_APP_BACKEND_URL}/temple/getall`;
-  //   const response = await axios.get(webURL);
-  //   setAlltemples(response.data.result);
-  // };
-
-  // console.log("wertyuio", alltemples)
 
   return (
     <div>
@@ -27,7 +18,6 @@ const Home = () => {
       <CulturalInsights />
       <CustomCarousel />
 
-      {/* <Cityhome /> */}
 
 
     </div>
