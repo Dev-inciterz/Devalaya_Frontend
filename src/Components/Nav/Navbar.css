@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container-nav {
+  border: 2px solid red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ff9933;
+  color: #303031;
+}
+
+.logo img {
+  width: 10vw;
+  padding: 5px;
+}
+
+.searchbar {
+  display: flex;
+  align-items: center;
+  width: 20vw;
+  margin: 00 00 00 100px;
+}
+
+.searchbar input {
+  border-radius: 5px;
+  border: 1px solid #5a5a5a4c;
+  width: 100%;
+}
+
+.searchbar input::placeholder {
+  font-weight: 300;
+  font-family: sans-serif;
+  padding: 5px;
+}
+
+.BOX {
+  /* border: 1px solid green; */
+  display: flex;
+  align-items: center;
+  width: 30vw;
+}
+
+.BOX  p{
+margin-bottom: 0;
+
+}
+.favourites,
+.login,
+.statelist,
+.booking {
+  margin: 0 10px;
+}
+
+.favourites p,
+.login p,
+.statelist p,
+.booking p {
+  font-weight: 600;
+}
+
+.statelist {
+  position: relative;
+}
+.statesmodal {
+  position: absolute;
+  top: 20px;
+  width: 30vw;
+  height: auto;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  right: -20px;
+  -webkit-box-shadow: 4px 4px 5px -4px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 4px 4px 5px -4px rgba(0, 0, 0, 0.75);
+  box-shadow: 4px 4px 5px -4px rgba(0, 0, 0, 0.75);
+}
+
+.statesmodal-items {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.statesmodal-items p a {
+  text-decoration: none;
+  color: black;
+  margin: 00 10px;
+  font-weight: 400;
+}
+
+
+
+.statesmodal {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 1000;
+}
+
+.statelist:hover .statesmodal {
+    display: block;
+    
+}
+
+.statelist {
+    position: relative;
+    cursor: pointer;
+
+}
+
+.statesmodal-items p {
+    margin: 0;
+    padding: 8px 12px;
+}
+
+.statesmodal-items p:hover {
+    background-color: #f0f0f0;
+}
+
+
+
+.serachIcon{
+
+    margin: 00 10px;
+    color: #fff;
+    font-size: 24px;
+    padding: 2px;
+    width: 10%;
+}
+
+.favrtIcon{
+
+    margin: 00 5px;
+    color: #fff;
+    font-size: 24px;
+    padding: 2px;
+}
+
+.favourites, .booking, .login, .states-text{
+
+    display: flex;
+    align-items: center;
+}

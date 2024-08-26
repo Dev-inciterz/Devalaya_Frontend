@@ -1,0 +1,23 @@
+.custom_carousel{
+
+    width: 80vw;
+    margin: 00 auto;
+}
+
+.item-list-carousel{
+
+    border: 1px solid red;
+}
+
+
+.box-carousel{
+
+    max-width: 18vw;
+    border: 2px solid green;
+}
+
+
+.box-carousel_image{
+
+    width: 100%;
+}

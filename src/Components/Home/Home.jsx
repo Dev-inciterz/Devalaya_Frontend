@@ -1,6 +1,11 @@
 import React from "react";
 import Navbar from "../Nav/Navbar";
-import Cityhome from "../Pages/City/Cityhome";
+import FancySlider from "../Slider/FancySlider";
+import Jyotirlingas from "./Jyotirlingas";
+import ChaarDhams from "./ChaarDhams";
+import CulturalInsights from "./CulturalInsights";
+import CustomCarousel from "../Slider/CustomCarousel";
+// import Cityhome from "../Pages/City/Cityhome";
 
 const Home = () => {
   // const [alltemples, setAlltemples] = useState([]);
@@ -16,8 +21,13 @@ const Home = () => {
   return (
     <div>
       <Navbar />
+      <FancySlider />
+      <Jyotirlingas />
+      <ChaarDhams />
+      <CulturalInsights />
+      <CustomCarousel />
 
-      <Cityhome />
+      {/* <Cityhome /> */}
 
 
     </div>

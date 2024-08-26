@@ -1,0 +1,113 @@
+.cultural_insights {
+   
+    width: 100%;
+    height: auto; 
+    padding: 10px;
+    margin-top: 10px;
+    gap:20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cultural_insights h1 {
+    margin-bottom: 15px;
+    padding: 20px 0 10px;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 3vw; 
+    background-color: #94E4B9;
+    color: #000;
+}
+
+.insights_left {
+    display: flex;
+    padding: 5px;
+    background-color: #FFE8D3;
+    height: 400px; 
+    width: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    color: #000;
+
+}
+.insights_right{
+    display: flex;
+    flex-direction: row;
+    gap: 1%;
+    padding: 5px;
+    background-color: lavender;
+    height: 400px; 
+    width: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    color: #000;
+
+}
+
+.insights_img {
+    width: 50%;
+    height: auto;
+    
+    border-radius: 9px;
+    transform: scale(0.9);
+    transition: 0.5s;
+}
+
+.insights_img:hover{
+    transform: scale(1);
+}
+
+
+
+
+.insights_text {
+    padding-top: 30px;
+    flex-grow: 1; 
+    
+}
+
+.insights_text h3 {
+ 
+
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+
+}
+
+.insights_text p {
+    padding: 20px 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    padding: 00 10px;
+}
+
+@media (max-width: 750px) {
+    .insights_left, .insights_right {
+        flex-direction: column; 
+        gap: 3%;
+        height: auto;
+    }
+
+    .insights_img {
+        width: 100%; 
+        height: auto;
+    }
+
+    .insights_text {
+        padding-top: 10px; 
+    }
+
+    .cultural_insights h1 {
+        font-size: 6vw;
+    }
+
+    .insights_text h3 {
+        font-size: 4vw; 
+    }
+
+    .insights_text p {
+        font-size: 3vw; 
+    }
+}
