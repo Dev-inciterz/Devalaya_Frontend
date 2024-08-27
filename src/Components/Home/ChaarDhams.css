@@ -1,14 +1,11 @@
 .dham-4 {
   width: 100%;
-  /* max-width: 1500px; / Optional: Set a max width for larger screens / */
   margin: 0 auto;
-  /* / border: 2px solid white; / */
   min-width: 400px;
   margin-top: 80px;
-  height: 100vh;
 }
 
-body {
+.chaardhams {
   background: #1e1f21;
   color: #fff;
 }
@@ -21,11 +18,13 @@ body {
 
 .dham {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-gap: 30px;
   padding: 10px;
   margin: 20px auto;
   width: 60vw;
+  border: 2px solid red;
+  height: auto;
 }
 
 .dham1 {
@@ -53,12 +52,17 @@ body {
   opacity: 0;
   border-radius: 10px;
 }
-.content h2 {
+
+.dham_one_content {
+  width: 100%;
+  margin: 00 auto;
+}
+.dham_one_content h2 {
   text-align: center;
   margin-top: 20px;
 }
 
-.content p {
+.dham_one_content p {
   padding: 10px;
   margin-top: 3px;
 }
@@ -72,4 +76,20 @@ body {
 }
 .dham1:hover img {
   opacity: 0;
+}
+
+/* For extra large dektops */
+
+@media only screen and (min-width: 1824px) {
+  .dham {
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .dham {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    width: 90vw;
+  }
 }

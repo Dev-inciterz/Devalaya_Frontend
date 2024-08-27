@@ -28,6 +28,8 @@ const ChaarDhams = () => {
           {dhams.map((dham) => {
             return (
               <div className="dham1">
+                <div className="dhaminner">
+
                 <img src={dham.pictures[0]} alt="Badrinath Dham" />
                 <video
                   autoPlay
@@ -35,8 +37,9 @@ const ChaarDhams = () => {
                   muted
                   src={dham.video}
                   alt="Badrinath Video"
-                />
-                <div className="content">
+                  />
+                  </div>
+                <div className="dham_one_content">
                   <h2>{dham.name}</h2>
                   <p>
                     Badrinath, is located in the Chamoli district of

@@ -5,6 +5,7 @@ import Jyotirlingas from "./Jyotirlingas";
 import ChaarDhams from "./ChaarDhams";
 import CulturalInsights from "./CulturalInsights";
 import CustomCarousel from "../Slider/CustomCarousel";
+import ShaktiPeeths from "./ShaktiPeeths";
 
 
 const Home = () => {
@@ -14,9 +15,14 @@ const Home = () => {
       <Navbar />
       <FancySlider />
       <Jyotirlingas />
+
+      <ShaktiPeeths />
+
+
+
       <ChaarDhams />
-      <CulturalInsights />
       <CustomCarousel />
+      <CulturalInsights />
 
 
 
