@@ -16,15 +16,15 @@ const FancySlider = () => {
 
 
   const HnadleNext = () =>{
-    let items = document.querySelectorAll(".item");
-    document.querySelector(".slide").appendChild(items[0]);
+    let items = document.querySelectorAll(".fancy_slide_item");
+    document.querySelector(".fancy_slide").appendChild(items[0]);
 
   }
 
 
   const HnadlePrev = () =>{
-    let items = document.querySelectorAll(".item");
-    document.querySelector(".slide").prepend(items[items.length - 1]);
+    let items = document.querySelectorAll(".fancy_slide_item");
+    document.querySelector(".fancy_slide").prepend(items[items.length - 1]);
 
   }
 
@@ -32,10 +32,10 @@ const FancySlider = () => {
 
   return (
     <div>
-      <div className="container">
-        <div className="slide">
+      <div className="fancy_container">
+        <div className="fancy_slide">
           <div
-            className="item"
+            className="fancy_slide_item"
             style={{ backgroundImage: `url(${kedarnath})` }}
           >
             <div className="content1">
@@ -52,7 +52,7 @@ const FancySlider = () => {
               <button className="home-banner-button">Book Now</button>
             </div>
           </div>
-          <div className="item" style={{ backgroundImage: `url(${triyugi})` }}>
+          <div className="fancy_slide_item" style={{ backgroundImage: `url(${triyugi})` }}>
             <div className="content1">
               <div className="name">Triyugi Narayan Temple</div>
               <div className="des">
@@ -67,7 +67,7 @@ const FancySlider = () => {
               <button className="home-banner-button">Book Now</button>
             </div>
           </div>
-          <div className="item" style={{ backgroundImage: `url(${sonark})` }}>
+          <div className="fancy_slide_item" style={{ backgroundImage: `url(${sonark})` }}>
             <div className="content1">
               <div className="name">Sonark Temple</div>
               <div className="des">
@@ -83,7 +83,7 @@ const FancySlider = () => {
             </div>
           </div>
           <div
-            className="item"
+            className="fancy_slide_item"
             style={{ backgroundImage: `url(${vaishnoDevi})` }}
           >
             <div className="content1">
@@ -101,7 +101,7 @@ const FancySlider = () => {
             </div>
           </div>
           <div
-            className="item"
+            className="fancy_slide_item"
             style={{ backgroundImage: `url(${surkandaDevi})` }}
           >
             <div className="content1">
@@ -118,7 +118,7 @@ const FancySlider = () => {
             </div>
           </div>
           <div
-            className="item"
+            className="fancy_slide_item"
             style={{ backgroundImage: `url(${meenakshi})` }}
           >
             <div className="content1">
