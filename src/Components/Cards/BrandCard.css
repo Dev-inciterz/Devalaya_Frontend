@@ -1,0 +1,53 @@
+.States_branding {
+  display: flex;
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 20px;
+
+}
+
+.States_brand-image {
+  width: 40vw;
+  height: auto;
+  border-radius: 10px;
+}
+
+.States_brand-image img {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+
+  /* border-radius: 0% 25%; */
+}
+
+.States_brand-content {
+  width: 40vw;
+  text-align: center;
+  align-content: center;
+  height: auto;
+  background: rgba(127, 218, 254, 0.8);
+  /* border-radius: 25% 0%; */
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .States_branding {
+    flex-direction: column;
+    width: 80%;
+  }
+
+  .States_brand-image,
+  .States_brand-content {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .States_brand-image img {
+    height: auto;
+  }
+}

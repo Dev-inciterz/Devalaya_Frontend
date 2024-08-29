@@ -1,0 +1,117 @@
+.states_container {
+  width: 90%;
+  margin: 50px auto;
+}
+
+.states_heading {
+  background-color: rgba(224, 82, 106, 0.94);
+  /* / border: 4px solid purple; / */
+}
+
+.states_heading h2 {
+  font-family: roboto sans-serif;
+  text-align: center;
+}
+
+/* / gap b/w box and cards given here / */
+.states_box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* / card1 / */
+.states_card {
+  display: flex;
+  border-radius: 5px;
+  width: 49%;
+  background-color: rgb(234 229 219 / 85%);
+  box-shadow: 2px 4px 5px 0px rgba(155, 155, 155, 0.42);
+
+  margin: 20px 00;
+}
+
+.states_cardLeft {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 50%;
+  /* / border: 2px solid purple; / */
+}
+
+.card_img img {
+  width: 100%;
+  height: auto;
+  position: relative;
+  aspect-ratio: 1/1;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  /* / border: 2px solid red; / */
+}
+
+.states_button button {
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  margin: 0 20px 0 30px;
+}
+
+.states_button button:hover {
+  cursor: pointer;
+}
+
+.states_button {
+  padding: 5px;
+  position: absolute;
+  bottom: 2%;
+  left: 25%;
+  transition: all 1s ease-out;
+  opacity: 0;
+  /* / border: 2px solid orangered; / */
+}
+
+.states_cardLeft:hover .states_button {
+  opacity: 1;
+}
+
+.states_cardRight {
+  width: 50%;
+  padding: 20px;
+  color: #000;
+}
+
+.longcards_heading {
+  text-align: center;
+  font-weight: 600;
+  font-size: 28px;
+}
+
+.longcarddescription {
+  margin: 00;
+  padding: 00;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .states_box {
+    flex-direction: column;
+  }
+
+  .states_card {
+    flex-direction: column;
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .states_cardLeft,
+  .states_cardRight {
+    width: 100%;
+  }
+
+  .states_button {
+    left: 0;
+  }
+}

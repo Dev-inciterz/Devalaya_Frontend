@@ -7,6 +7,8 @@ import Temple from "./Components/Pages/Temple/Temple";
 import Newtestcomp from "./Components/Temple_Admin/Newtestcomp";
 import TempleAdd from "./Components/Temple_Admin/Templeadd";
 import Templeupdate from "./Components/Temple_Admin/Templeupdate";
+import StatesHome from "./Components/Pages/State/StatesHome";
+import StateSingle from "./Components/Pages/State/StateSingle";
 
 function App() {
   console.log("Name", process.env.REACT_APP_NAME);
@@ -15,6 +17,10 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+
+          <Route path="/allstates" element={<StatesHome />} />
+
+          <Route path="/state/:id" element={<StateSingle />} />
 
           <Route path="/addtemple" element={<TempleAdd />} />
 

@@ -1,0 +1,47 @@
+
+
+.itemintromain{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    margin: 50px auto;
+
+    background-color: aqua;
+    border-radius: 10px;
+}
+
+
+.itemintorleft{
+
+    width: 50%;
+
+}
+
+
+.itemintorleft img{
+
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+
+}
+
+
+.itemintorright{
+
+    padding: 20px;
+    width: 50%;
+}
+
+
+
+
+
+.itemintro_heading{
+
+
+    font-weight: 600;
+    font-size: 28px;
+    text-align: center;
+}

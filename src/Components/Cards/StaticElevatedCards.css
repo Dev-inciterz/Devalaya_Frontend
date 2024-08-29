@@ -1,0 +1,70 @@
+.elevatedcradswhole{
+
+    margin: 20px auto;
+}
+
+.allitems {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 90vw;
+  margin: 10px auto;
+}
+
+.staticelevatedheadings{
+
+    text-align: center;
+    font-weight: 600;
+    font-size: 44px;
+}
+
+.card_item {
+  width: 12vw;
+  height: 10vw;
+  border-radius: 5px;
+  margin: 20px;
+  background-size: cover;
+  background-blend-mode: darken;
+  color: white;
+  background-image: var(--bg-image); /* Use CSS variable for background image */
+  background-color: rgba(0, 0, 0, 0.45);
+  transition: background-color 0.3s ease;
+  position: relative;
+
+}
+
+.card_item:hover {
+  background-color: rgba(0, 0, 0, 0.05); /* Remove background color on hover */
+  cursor: pointer;
+
+}
+
+.item_title {
+  font-size: 18px;
+  text-align: center;
+  transition: all ease-in-out 0.5s;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 600;
+}
+
+.card_item:hover .item_title {
+  top: 80%;
+}
+
+
+
+
+/* Mobile */
+@media (max-width: 480px) {
+
+  .card_item {
+
+    width: 90%;
+    height: 25vh;
+  }
+
+}
