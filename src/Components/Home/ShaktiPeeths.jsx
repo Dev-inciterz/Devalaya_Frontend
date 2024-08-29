@@ -17,6 +17,8 @@ const ShaktiPeeths = () => {
         console.error("Error fetching data:", error);
       });
   }, []);
+
+  console.log("jevbck,evbjerbvjkerl", shaktiPeethas)
   return (
     <div>
       <div className="shaktipeeth">
@@ -64,7 +66,7 @@ const ShaktiPeeths = () => {
                     <h2>{temple.name}</h2>
                     <p>{limitedDescription}</p>
                     <button>Body Part</button>
-                    <button>Country - {temple.city.country.title}</button>
+                    <button>Country - {temple.city?.country.title}</button>
                   </div>
                 );
               })}
