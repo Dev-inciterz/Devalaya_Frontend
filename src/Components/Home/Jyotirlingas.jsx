@@ -9,7 +9,6 @@ const Jyotirlingas = () => {
     axiosWithoutToken
       .get("/temple/gettemplesbycat/65d4a0683b27dcea208a204c")
       .then((response) => {
-        console.log("the all jyotirloingas", response);
         setJyotirlings(response.data.result);
       })
       .catch((error) => {

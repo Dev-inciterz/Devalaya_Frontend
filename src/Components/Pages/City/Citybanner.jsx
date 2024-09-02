@@ -1,16 +1,16 @@
 import React from "react";
+import './Citybanner.css'
 
 import { Fade } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 
-const Citybanner = ({ cityimages, title }) => {
+const Citybanner = ({ cityimages }) => {
   return (
-    <div>
+    <div className="citybanner_top_sect">
       <div className="slide-container">
         <Fade>
           {cityimages.map((image, index) => (
             <div key={index}>
-              {/* <img style={{ width: '100%' ,display:"block", maxHeight:"80vh"}} alt="tmplebnnr" src={index < cityimages.length ? `${process.env.REACT_APP_BACKEND_URL}/${cityimages[index]}` : image} /> */}
               <img
                 style={{
                   width: "100%",
@@ -21,11 +21,10 @@ const Citybanner = ({ cityimages, title }) => {
                 alt="tmplebnnr"
                 src={
                   index < cityimages.length
-                    ? `${process.env.REACT_APP_BACKEND_URL}/${cityimages[index]}`
+                    ? cityimages[index]
                     : image
                 }
               />
-              {/* <h2>{title}</h2> */}
             </div>
           ))}
         </Fade>
@@ -35,3 +34,7 @@ const Citybanner = ({ cityimages, title }) => {
 };
 
 export default Citybanner;
+
+
+
+

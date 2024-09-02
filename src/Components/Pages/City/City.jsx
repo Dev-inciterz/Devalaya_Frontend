@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Loader from "../../Loader/Loader";
 import Citybanner from "./Citybanner";
 import './City.css'
-import Navbar from "../../Nav/Navbar";
+import FancyNav from "../../Nav/FancyNav";
 
 const City = () => {
 
@@ -26,7 +26,7 @@ const City = () => {
 
   const fetchCityData = async () => {
     try {
-      const webURL = `${process.env.REACT_APP_BACKEND_URL}/city/get/${id}`;
+      const webURL = `${process.env.REACT_APP_API_BASE_URL}/city/get/${id}`;
       const response = await axios.get(webURL);
       return response.data.result;
     } catch (error) {
@@ -37,7 +37,7 @@ const City = () => {
   const FetchTemplesByCity = async () => {
     try {
         console.log("dxfcghjklckduyasv", citydata)
-      const webURL = `${process.env.REACT_APP_BACKEND_URL}/temple/gettemplesbycity/${id}`;
+      const webURL = `${process.env.REACT_APP_API_BASE_URL}/temple/gettemplesbycity/${id}`;
 
       console.error(webURL)
       const response = await axios.get(webURL);
@@ -73,7 +73,7 @@ const City = () => {
         <Loader />
       ) : (
         <div className="citypagemain">
-          <Navbar />
+          <FancyNav />
           <div className="citytopbanners">
             <Citybanner cityimages={citydata.pictures} title={citydata.title} />
           </div>
@@ -95,7 +95,7 @@ const City = () => {
               { citytemples && citytemples.map((temple) => (
                 <div className="citybased_temple_card" onClick={() => SendToTemplePage(temple._id)}>
                   <img
-                    src={`${process.env.REACT_APP_BACKEND_URL}/${temple.pictures[0]}`}
+                    src={temple.pictures[0]}
                     alt="Temple visuals"
                   />
                   <p className="citybased_temple_name">{temple.name}</p>

@@ -4,20 +4,22 @@ import { useNavigate } from "react-router-dom";
 
 const StaticElevatedCards = ({ ItemData }) => {
 
-  console.log("eknklenvkenv;ev klnebv", ItemData)
-
- 
-
-
   const navigate = useNavigate();
 
   if (!ItemData || ItemData.length === 0) {
     return <div>Loading</div>;
   }
 
-  const HandleSendToSingleState = (ItemId) => {
+  const HandleSendToSingleState = (Item) => {
 
-    navigate(`/state/${ItemId}` )
+
+    if(ItemData[0].state){
+
+      navigate(`/city/${Item._id}` )
+    } else {
+      navigate(`/state/${Item._id}` )
+    }
+
   }
 
   return (
@@ -37,7 +39,7 @@ const StaticElevatedCards = ({ ItemData }) => {
               "--bg-image": `url(${item.pictures[0]})`, // Set background image via CSS variable
             }}
 
-            onClick={() => HandleSendToSingleState(item._id)}
+            onClick={() => HandleSendToSingleState(item)}
           >
             <p className="item_title">{item.title}</p>
           </div>

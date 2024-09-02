@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom';
 import LongIntroCard from '../../Cards/LongIntroCard';
 
 import StaticElevatedCards from '../../Cards/StaticElevatedCards'
+import CustomCarousel from '../../Slider/CustomCarousel';
 
 const StateSingle = () => {
 
@@ -14,6 +15,10 @@ const StateSingle = () => {
 
 
     const [cities, setCities] = useState([]);
+
+    const [stateAllTemples, setStateAllTemples] = useState([]);
+
+
     const [selectedCities, setSelectedCities] = useState([]);
   
 
@@ -31,6 +36,8 @@ const StateSingle = () => {
   
     // Fetch the states data when the component mounts
     useEffect(() => {
+
+
       axiosWithoutToken
         .get(`/city/getallbystate/${id}`)
         .then((response) => {
@@ -40,6 +47,20 @@ const StateSingle = () => {
         .catch((error) => {
           console.error('Error fetching data:', error);
         });
+
+
+        axiosWithoutToken
+        .get(`/temple/gettemplesbystate/${id}`)
+        .then((response) => {
+          setStateAllTemples(response.data.result);
+          handleRandomStates(response.data.result); // Call to select random states
+        })
+        .catch((error) => {
+          console.error('Error fetching data:', error);
+        });
+
+
+
         // eslint-disable-next-line
     }, []);
   
@@ -55,6 +76,8 @@ const StateSingle = () => {
         <LongIntroCard  item={cities[0]?.state} />
 
         <StaticElevatedCards ItemData={cities}/>
+
+        <CustomCarousel temples={stateAllTemples} compheading={`most visited temples in ${cities[0]?.state.title}` } />
 
         
 

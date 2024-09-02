@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { axiosWithoutToken } from "../../Api/AxiosInstance";
-import "./CustomCarousel.css";
+import React from "react";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import "./CustomCarousel.css";
 
-const CustomCarousel = () => {
-  const [randomTemples, setRandomTemples] = useState([]);
+const CustomCarousel = (props) => {
+  const Temples = props.temples;
+  const CompHeading = props.compheading;
 
   var settings = {
     dots: true,
@@ -41,44 +42,30 @@ const CustomCarousel = () => {
     ],
   };
 
-  useEffect(() => {
-    axiosWithoutToken
-      .get("/temple/gettemplesrandom")
-      .then((response) => {
-        console.log("the all RandomTemples", response);
-        setRandomTemples(response.data.result);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, []);
-
   return (
     <div className="custom_carousel">
       <div className="heading-carousel">
-        <h1>Temples To Visit During Winter (Random now)</h1>
+        <h1>{CompHeading}</h1>
       </div>
 
-    
-        <div className="item-list-carousel">
-          <Slider {...settings}>
-            {randomTemples.map((temple, index) => (
-              <div className="box-carousel" key={temple.id || index}>
-                <img
-                  className="box-carousel_image"
-                  src={temple.pictures[0]}
-                  alt={temple.name}
-                />
-                <div className="text-carousel">
-                  <h2>{temple.name}</h2>
-                  <p>{temple.smalldescription}</p>
-                </div>
+      <div className="item-list-carousel">
+        <Slider {...settings}>
+          {Temples.map((temple, index) => (
+            <div className="box-carousel" key={temple.id || index}>
+              <img
+                className="box-carousel_image"
+                src={temple.pictures[0]}
+                alt={temple.name}
+              />
+              <div className="text-carousel">
+                <h2>{temple.name}</h2>
+                <p>{temple.smalldescription}</p>
               </div>
-            ))}
-          </Slider>
-        </div>
+            </div>
+          ))}
+        </Slider>
       </div>
-
+    </div>
   );
 };
 

@@ -119,7 +119,7 @@ const Temple = () => {
   const fetchTempleData = async () => {
     console.warn("i ahev been called");
     try {
-      const webURL = `${process.env.REACT_APP_BACKEND_URL}/temple/get/${id}`;
+      const webURL = `${process.env.REACT_APP_API_BASE_URL}/temple/get/${id}`;
       const response = await axios.get(webURL);
       // console.log("responseresponseresponseresponseresponse", response);
       return response.data.result;
@@ -130,7 +130,7 @@ const Temple = () => {
 
   const FetchTemplesByCity = async (ctyid) => {
     try {
-      const webURL = `${process.env.REACT_APP_BACKEND_URL}/temple/gettemplesbycity/${ctyid}`;
+      const webURL = `${process.env.REACT_APP_API_BASE_URL}/temple/gettemplesbycity/${ctyid}`;
       console.error(webURL);
       const response = await axios.get(webURL);
       return response.data.result;
