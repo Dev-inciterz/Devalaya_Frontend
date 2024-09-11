@@ -19,18 +19,17 @@ const Jyotirlingas = () => {
   return (
     <div>
       <div className="jyotirling">
-        <div className="heading">
-          <h2>Jyotirlingas</h2>
-        </div>
+
+          <h2 className="jyotirling_heading">Jyotirlingas</h2>
+      
         <div id="card-area">
           <div className="jyotir_wrapper">
             <div className="jyotir_box_area">
-              {Jyotirlings.map(({ pictures, title, description }) => (
+              {Jyotirlings.map(({ pictures, title}) => (
                 <div className="jyotir_box" key={title}>
                   <img alt={title} src={pictures[0]} />
                   <div className="jyotir_box_overlay">
                     <h3>{title}</h3>
-                    <p>{description}</p>
                     <a href="#Book Now">Book Now</a>
                   </div>
                 </div>

@@ -18,11 +18,11 @@ const ShaktiPeeths = () => {
       });
   }, []);
 
-  console.log("jevbck,evbjerbvjkerl", shaktiPeethas)
+  console.log("jevbck,evbjerbvjkerl", shaktiPeethas);
   return (
     <div>
       <div className="shaktipeeth">
-        <div className="shaktipeeth_left">
+        {/* <div className="shaktipeeth_left">
           <div className="shaktipeeth-main">
             <img src={shaktipeeth} alt="text" />
           </div>
@@ -43,11 +43,11 @@ const ShaktiPeeths = () => {
             <button>See More</button>
             <button>Book Now</button>
           </div>
-        </div>
+        </div> */}
         <div className="shaktipeeth_right">
-          <div className="shaktipeeth_right-heading">
-            <h1>{shaktiPeethas.length} Shakti Peeth</h1>
-          </div>
+          <p className="shaktipeeth_right-heading">
+            Shakti Peeth -  {shaktiPeethas.length}
+          </p>
 
           <div className="shaktipeeth_list">
             <div className="shaktipeeth_container">
@@ -65,8 +65,12 @@ const ShaktiPeeths = () => {
                     <img src={temple.pictures[0]} alt={temple.name} />
                     <h2>{temple.name}</h2>
                     <p>{limitedDescription}</p>
-                    <button>Body Part</button>
-                    <button>Country - {temple.city?.country.title}</button>
+
+                    <div className="shaktipeeth_somedes">
+                      <p className="body_part">Body Part</p>
+                      <p className="shktipeeth_country">{temple.city?.country.title}</p>
+                    </div>
+                   
                   </div>
                 );
               })}
