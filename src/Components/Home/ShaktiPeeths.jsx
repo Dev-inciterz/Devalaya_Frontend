@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./ShaktiPeeths.css";
 import { axiosWithoutToken } from "../../Api/AxiosInstance";
-import shaktipeeth from "../Assets/main shaktipeeth.jpg";
+// import shaktipeeth from "../Assets/main shaktipeeth.jpg";
 
 const ShaktiPeeths = () => {
   const [shaktiPeethas, setShaktiPeethas] = useState([]);
